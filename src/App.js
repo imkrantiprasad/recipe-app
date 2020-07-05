@@ -28,8 +28,6 @@ class App extends Component {
       count: data.count,
       recipes: data.recipes
     });
-    console.log(this.state.count)
-    console.log(this.state.recipes)
   }
   render() {
     const {
@@ -39,6 +37,7 @@ class App extends Component {
         recipes
       }
     } = this;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -52,3 +51,10 @@ class App extends Component {
 }
 
 export default App;
+// if (recipes.length === 0) {
+//   return (
+//     <div>
+//       <h1>Nothing Found</h1>
+//     </div>
+//   )
+// }
