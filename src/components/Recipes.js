@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function Recipes(props) {
-    if (props.count === 0) {
-        return (
-            <div>
-                <h3>Search something!</h3>
-            </div>
-        )
-    }
-    else {
+    // if (props.count === 0) {
+    //     return (
+    //         <div>
+    //             <h3>Search something!</h3>
+    //         </div>
+    //     )
+    // }
+    // else {
         return (
             <div className="container">
                 <div className="row">
@@ -34,7 +35,12 @@ export default function Recipes(props) {
                                             <span>{recipe.publisher}</span>
                                         </p>
                                     </div>
-                                    <button className="recipe_buttons">View Recipe</button>
+                                    <button className="recipe_buttons">
+                                        <Link to={{
+                                            pathname: `/recipe/${recipe.recipe_id}`,
+                                            state: { recipe: recipe.recipe_id }
+                                        }}>View Recipe</Link>
+                                    </button>
                                 </div>
                             </div>
                         );
@@ -42,5 +48,5 @@ export default function Recipes(props) {
                 </div>
             </div>
         )
-    }
+    // }
 }
