@@ -30,22 +30,22 @@ class App extends Component {
     });
   }
 
-  componentDidMount = () => {
-    const json = localStorage.getItem("recipes");
-    const recipes = JSON.parse(json);
-    this.setState({ recipes: recipes });
+  // componentDidMount = () => {
+  //   const json = localStorage.getItem("recipes");
+  //   const recipes = JSON.parse(json);
+  //   this.setState({ recipes: recipes });
 
-    const c = localStorage.getItem("count");
-    const count = JSON.parse(c);
-    this.setState({ count: count });
-  }
+  //   const c = localStorage.getItem("count");
+  //   const count = JSON.parse(c);
+  //   this.setState({ count: count });
+  // }
 
-  componentDidUpdate = () => {
-    const recipes = JSON.stringify(this.state.recipes);
-    localStorage.setItem("recipes", recipes);
-    const count = JSON.stringify(this.state.count);
-    localStorage.setItem("count", count);
-  }
+  // componentDidUpdate = () => {
+  //   const recipes = JSON.stringify(this.state.recipes);
+  //   localStorage.setItem("recipes", recipes);
+  //   const count = JSON.stringify(this.state.count);
+  //   localStorage.setItem("count", count);
+  // }
 
   render() {
     const {

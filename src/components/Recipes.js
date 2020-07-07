@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function Recipes(props) {
-    // if (props.count === 0) {
-    //     return (
-    //         <div>
-    //             <h3>Search something!</h3>
-    //         </div>
-    //     )
-    // }
-    // else {
+    if (props.count === 0) {
+        return (
+            <div>
+                <h3>Search something!</h3>
+            </div>
+        )
+    }
+    else {
         return (
             <div className="container">
                 <div className="row">
@@ -48,5 +48,5 @@ export default function Recipes(props) {
                 </div>
             </div>
         )
-    // }
+    }
 }
