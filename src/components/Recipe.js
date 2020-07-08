@@ -12,7 +12,7 @@ class Recipe extends React.Component {
         const req = await fetch(`https://forkify-api.herokuapp.com/api/get?rId=${id}`);
 
         const res = await req.json();
-        console.log(res.recipe);
+        // console.log(res.recipe);
         this.setState({
             activeRecipe: res.recipe
         });
