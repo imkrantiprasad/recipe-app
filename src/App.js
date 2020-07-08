@@ -39,8 +39,8 @@ class App extends Component {
   }
 
   componentDidUpdate = () => {
-    const recipes = JSON.stringify(this.state.recipes);
-    localStorage.setItem("recipes", recipes);
+    // const recipes = JSON.stringify(this.state.recipes);
+    // localStorage.setItem("recipes", recipes);
     const count = JSON.stringify(this.state.count);
     localStorage.setItem("count", count);
   }
