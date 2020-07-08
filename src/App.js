@@ -29,9 +29,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    // const json = localStorage.getItem("recipes");
-    // const recipes = JSON.parse(json);
-    // this.setState({ recipes: recipes });
+    const json = localStorage.getItem("recipes");
+    const recipes = JSON.parse(json);
+    this.setState({ recipes: recipes });
 
     const c = localStorage.getItem("count");
     const count = JSON.parse(c);
@@ -39,8 +39,8 @@ class App extends Component {
   }
 
   componentDidUpdate = () => {
-    // const recipes = JSON.stringify(this.state.recipes);
-    // localStorage.setItem("recipes", recipes);
+    const recipes = JSON.stringify(this.state.recipes);
+    localStorage.setItem("recipes", recipes);
     const count = JSON.stringify(this.state.count);
     localStorage.setItem("count", count);
   }
