@@ -21,14 +21,30 @@ class App extends Component {
     // const api_call = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`);
     const api_call = await fetch(`https://forkify-api.herokuapp.com/api/search?q=${recipeName}`);
 
-    // console.log(recipeName);
     const data = await api_call.json();
-    // console.log(data);
     this.setState({
       count: data.count,
       recipes: data.recipes
     });
   }
+
+  componentDidMount = () => {
+    // const json = localStorage.getItem("recipes");
+    // const recipes = JSON.parse(json);
+    // this.setState({ recipes: recipes });
+
+    const c = localStorage.getItem("count");
+    const count = JSON.parse(c);
+    this.setState({ count: count });
+  }
+
+  componentDidUpdate = () => {
+    // const recipes = JSON.stringify(this.state.recipes);
+    // localStorage.setItem("recipes", recipes);
+    const count = JSON.stringify(this.state.count);
+    localStorage.setItem("count", count);
+  }
+
   render() {
     const {
       getRecipe,
@@ -51,10 +67,3 @@ class App extends Component {
 }
 
 export default App;
-// if (recipes.length === 0) {
-//   return (
-//     <div>
-//       <h1>Nothing Found</h1>
-//     </div>
-//   )
-// }
